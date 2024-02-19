@@ -1,16 +1,14 @@
 import unittest
 
 from watchlist import app, db
-from watchlist.models import Movie, User
 from watchlist.commands import forge, initdb
+from watchlist.models import Movie, User
 
 
 class WatchlistTestCase(unittest.TestCase):
 
     def setUp(self):
         app.config.update(TESTING=True, SQLALCHEMY_DATABASE_URI="sqlite:///:memory:")
-        self.app_context = app.app_context()
-        self.app_context.push()
         db.create_all()
 
         user = User(name="Test", username="test")
@@ -25,8 +23,6 @@ class WatchlistTestCase(unittest.TestCase):
     def tearDown(self):
         db.session.remove()
         db.drop_all()
-
-        self.app_context.pop()
 
     def login(self):
         self.client.post(
@@ -120,7 +116,7 @@ class WatchlistTestCase(unittest.TestCase):
         response = self.client.get("/settings")
         data = response.get_data(as_text=True)
         self.assertIn("Settings", data)
-        self.assertIn("Name", data)
+        self.assertIn("Your Name", data)
 
         response = self.client.post(
             "/settings",
