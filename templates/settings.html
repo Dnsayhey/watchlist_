@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Settings</h3>
+<form method="post">
+    Name<br>
+    <input type="text" name="name" required value="{{ current_user.name }}"><br><br>
+    <input type="submit" value="Save" class="btn">
+</form>
+{% endblock %}
