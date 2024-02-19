@@ -1,0 +1,30 @@
+# MacOS
+.DS_Store
+
+# IDE
+*~
+
+# Python
+*.pyc
+__pycache__/
+
+# Flask
+instance/
+.webassets-cache/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# Logs
+*.log
+
+# Caches
+.cache/
+*.swp
