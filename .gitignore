@@ -30,3 +30,4 @@ ENV/
 *.swp
 
 .env
+*.db
