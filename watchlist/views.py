@@ -103,7 +103,7 @@ def settings():
 
         current_user.name = name
         db.session.commit()
-        flash("Settings Updated.")
+        flash("Settings updated.")
         return redirect(url_for("index"))
 
     return render_template("settings.html")
