@@ -28,3 +28,5 @@ ENV/
 # Caches
 .cache/
 *.swp
+
+.env
